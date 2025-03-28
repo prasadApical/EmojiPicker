@@ -1,0 +1,8 @@
+.slds-avatar img {
+    max-width: 100%;
+    height: 32px;
+}
+
+.slds-page-header .left div{
+    background-color: transparent !important;
+}

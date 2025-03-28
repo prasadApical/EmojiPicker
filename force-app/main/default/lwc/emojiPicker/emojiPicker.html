@@ -1,0 +1,122 @@
+<!--
+    Author: Apical Cloud Soltutions Ltd.
+    Developer: Prasad Rajaram Kumawat
+    Application: Emoji Picker with GIF Integration
+    Created Date: 2024-06-21
+    Modified Date: 2024-06-21
+    Description: This html file contains the HTML code for the Emoji Picker with GIF Integration.
+
+    Copyright © 2024 Apical Cloud Solutions Ltd.
+    All rights reserved. No part of this code may be reproduced, distributed, or transmitted
+    in any form or by any means, including photocopying, recording, or other electronic or mechanical methods,
+    without the prior written permission of the owner.
+-->
+<template>
+    <div class="emoji-picker-container">
+        <lightning-card>
+            <template lwc:if={label}>
+                <div class="card-header">
+                    <h2><template if:true={isRequired}>
+                        <span class="oce-required">*</span>
+                    </template>{label}</h2>
+                </div>
+            </template>
+            <div class="slds-m-around_medium">
+                <lightning-input-rich-text
+                    label="Text"
+                    value={inputValue}
+                    onchange={handleTextChange}>
+                </lightning-input-rich-text>
+
+                <button
+                    class="circular-button slds-m-top_medium"
+                    onclick={toggleEmojiPicker}>
+                    😊
+                </button>
+            </div>
+        </lightning-card>
+
+        <template if:true={showEmojiPicker}>
+            <div class="emoji-popup" onclick={closeEmojiPicker}>
+                <div class="emoji-popup-content" onclick={preventClose}>
+                    <lightning-tabset>
+                        <lightning-tab label={firstSmileyAndEmotion} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={smileysAndEmotion} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstSymbol} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={symbols} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstAnimalAndNature} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={animalsAndNature} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstFoodAndDrink} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={foodAndDrink} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstActivity} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={activities} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstTravelAndPlace} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={travelAndPlaces} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstObject} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={objects} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label={firstFlag} class="emoji-tab-label">
+                            <div class="emoji-picker">
+                                <template for:each={flags} for:item="emoji">
+                                    <span key={emoji} onclick={handleEmojiClick}>{emoji}</span>
+                                </template>
+                            </div>
+                        </lightning-tab>
+                        <lightning-tab label="GIF" class="emoji-tab-label-gif" >
+
+                            <div class="gif-search">
+                                <lightning-input
+                                    label="Search GIFs"
+                                    value={searchQuery}
+                                    onchange={handleSearchChange}
+                                    style="font-size:0.85rem !important">
+                                </lightning-input>
+                                <div class="space"></div>
+                                <lightning-button label="Search" style="font-size:0.85rem !important" onclick={searchGifs}></lightning-button>
+                            </div>
+                            <div class="gif-picker">
+                                <template for:each={listGifs} for:item="gif">
+                                    <img key={gif.id} src={gif.images.fixed_height_small.url} alt={gif.title} onclick={handleGifClick} />
+                                </template>
+                            </div>
+                        </lightning-tab>
+                    </lightning-tabset>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,105 @@
+.slds-tabs_default__link{
+	font-size: 1.3rem;
+}
+
+[data-label="GIF"] .slds-tabs_default__link {
+  margin-top 0.6rem !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1rem solid gray;
+  border-radius: 0.4rem;
+  font-size: 0.85rem !important;
+  margin-top: 0.6rem !important;
+  width: 2rem;
+  height: 1.3rem;
+  margin-bottom: 0.55rem;
+  display: flex;
+}
+/*x
+
+display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1rem solid gray;
+    border-radius: 0.4rem;
+    font-size: 0.85rem !important;
+    margin-top: 0.6rem;
+    width: 2rem;
+    margin-bottom: 0.6rem;
+    /* padding-bottom: 0rem; */
+    height: 1.3rem;
+    /* background-color: white; */
+    /* box-sizing: border-box;*/
+	
+	
+	  margin-top 0.6rem !important;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1rem solid gray;
+  border-radius: 0.4rem;
+  font-size: 0.85rem !important;
+  margin-top: 0.6rem !important;
+  width: 2rem;
+  height: 1.3rem;
+	
+[data-title="GIF"] .slds-tabs_default__item {
+	padding-bottom: 0.7rem !important;
+	height: 2.5rem !important;
+}
+
+[data-title="GIF"] .slds-tabs_default__item slds-is-active{
+	padding-bottom: 0.7rem !important;
+	height: 2.5rem !important;
+}
+*/
+
+.slds-tabs_default__item:after, .slds-tabs--default__item:after {
+    top: 2.2rem;
+}
+
+.emoji-picker-container .slds-card__header{
+    display: none !important;
+}
+
+.emoji-popup-content .slds-tabs_default__item.slds-is-active:after{
+    background:#3D54C6;
+}
+
+.emoji-picker-container .slds-rich-text-editor{ 
+    border: 1px solid #B767EE; 
+}
+
+.emoji-picker-container .slds-button{
+    border-color: #B767EE; 
+    color: #3D54C6;
+}
+
+.emoji-picker-container .slds-input_faux { 
+    border: 1px solid #B767EE; 
+    color: #3D54C6;
+}
+
+.emoji-picker-container .slds-dropdown,
+.emoji-picker-container .slds-rich-text-editor__textarea:last-child .slds-rich-text-area__content{
+    color:#3D54C6;
+}
+
+.emoji-picker-container .slds-icon{
+    fill: #B767EE;
+}
+
+.emoji-popup-content .slds-form-element__label{
+    color: #B767EE;
+}
+
+.emoji-popup-content .slds-input{
+    color:#3D54C6;
+    border:1px solid #3D54C6;
+}
+
+.emoji-popup-content .slds-button{
+    border-color: #3D54C6; 
+    color: #B767EE;
+}

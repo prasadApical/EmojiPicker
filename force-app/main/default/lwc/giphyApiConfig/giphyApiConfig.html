@@ -1,0 +1,84 @@
+<!--
+ @author Atul Chopade [Apical Cloud Solutions Ltd.]
+ @date 26 Feb 2025
+ @description LWC Controller for Api key and How to Use App Page
+  -->
+ 
+  <template>
+    <div class="setup-background">
+        <div class="upper-container">
+            <!-- Google API Key Configuration Card -->
+            <div class="card">
+                <h2>Giphy API Key Configuration</h2>
+                <label for="apiKey">Enter Giphy API Key</label>
+                <input type="text" id="apiKey" class="input-field" value={strApiKey} onchange={handleInputChange} />
+                <button class="btn-primary" onclick={handleSave}>Save Key</button>
+            </div>
+
+            <!-- How to Set Up API Key Card -->
+            <div class="card">
+                <h2>How to Set Up API Key</h2>
+                <p>Follow this guide to generate a Giphy API Key:</p>
+                <button class="btn-secondary" onclick={openReferenceLink}>View Guide</button>
+            </div>
+        </div>
+<!-- Additional Card for App Translation Setup -->
+        <div class="slds-p-top_medium">
+            <div class="card">
+                <h2>How can you use Apical Emoji Picker</h2>
+                <div class="slds-p-around_medium">
+                    <!-- Warning Message for API Key Requirement -->
+                    <lightning-icon icon-name="utility:warning" 
+                                    alternative-text="Warning" 
+                                    size="x-small" 
+                                    class="slds-m-right_small slds-icon-text-warning">
+                    </lightning-icon>
+                    <span class="slds-text-color_error warning-message">
+                        Please enter and save your Giphy API Key in the above field before proceeding. Otherwise, you can not access Gif in emoji picker.
+                    </span>
+                </div>
+                <div class="slds-p-around_medium">
+                    <h2 class="slds-text-heading_medium slds-text-color_default slds-m-bottom_medium">
+                        You can use this Emoji Picker in Flows, Record Pages, Home Pages, App Pages, Community Pages, Lightning Component Tabs, or as a child component. This component allows you to easily add GIFs and emojis to your Salesforce pages with a single click.
+                    </h2>
+                    <h3 class="slds-text-heading_small slds-text-color_default">How to configure Emoji Picker for Record Page, Home Page or App Page and How to use it.</h3>
+                    <ol class="slds-list_ordered slds-m-top_medium slds-m-bottom_medium">
+                        <li>You can customize the heading of the Emoji Picker component by updating its label when adding it to a Record Page, App Page, or Home Page.</li>
+                        <img src={image1} class="slds-m-top_medium document-images"/>
+                        <li>After saving the emoji will appear on screen with the label you provided in above step.</li>
+                        <img src={image2} class="slds-m-top_medium document-images"/>
+                        <li>With the Emoji Picker, you can format your text using the available options and add both emojis and GIFs simultaneously.</li>
+                        <img src={image3} class="document-images"/>
+
+                        <li>Click the "Emoji Button 😊" to open an emoji popup where you can select from a range of number emojis.
+                        </li>
+                        <img src={image4} class="document-images"/>
+
+                        <li>Click on the "GIF" option to search for the GIF you want to add in your text box.</li>
+                        <img src={image5} class="document-images"/>
+
+                    </ol>   
+                    <h3 class="slds-text-heading_small slds-text-color_default">How to use it in flow</h3>
+                    <ol class="slds-list_ordered slds-m-top_medium slds-m-bottom_medium">
+                        <li>You can drag this Emoji Picker on the Screen for that you need to search for the Emoji Piker in the Components and drag the "emojiPicker" to the screen</li>
+                        <img src={image6} class="slds-m-top_medium document-images"/>
+                        <li>You need to specify the API Name and Label for the Emoji Picker component. The label will appear as the heading for the Emoji Picker.</li>
+                        <img src={image7} class="slds-m-top_medium document-images"/>
+                        <li>You can also make it required by making the Is Required? equal true as shown in the image</li>
+                        <img src={image8} class="document-images"/>
+                        <li>You can use the Emoji Picker's value in other flow elements, just like other screen component values. But after selecting the Emoji Picker, simply click on Value to use its value</li>
+                        <img src={image9} class="document-images"/> 
+                    </ol> 
+                    <h3 class="slds-text-heading_small slds-text-color_default">How to use it in the parent Component</h3>
+                    <ol class="slds-list_ordered slds-m-top_medium slds-m-bottom_medium">
+                        <li>For setting the label value if you are using emoji picker as child you need to pass the label value as shown below</li>
+                        <img src={image10} class="slds-m-top_medium document-images"/>
+                        <li>You can also make Emoji Picker required, just need to set "is-required=true". And manually call the validate() method in the parent component before proceeding.</li>
+                        <img src={image11} class="document-images"/>
+                        <img src={image12} class="document-images"/>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
